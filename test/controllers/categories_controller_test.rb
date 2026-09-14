@@ -9,13 +9,13 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get show" do
     category = categories(:one)
-    get categories_show_url(category)
+    get categories_url(category)
     assert_response :success
   end
 
   test "should get new" do
     category = categories(:one)
-    get categories_new_url
+    get new_category_url
     assert_response :success
   end
 
