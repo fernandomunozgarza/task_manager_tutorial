@@ -1,0 +1,17 @@
+<%= link_to("Back to Collection", books_path, class: 'back-link') %>
+
+<div class="books delete">
+  <h2>Delete Book</h2>
+  <%# needs method: delete to be specified in the form_for helper, otherwise it will default to method: post %>
+  <%= form_for(@book, method: 'delete') do |f| %>
+    <% # url: book_path(@book), method: 'delete' %>
+
+    <p>Are you sure you want to permanently delete this book?</p>
+    <p><%= @book.title %></p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete Book") %>
+    </div>
+
+  <% end %>
+</div>
