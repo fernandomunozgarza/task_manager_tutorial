@@ -2,27 +2,31 @@ require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get categories_index_url
+    category = categories(:one)
+    get categories_url
     assert_response :success
   end
 
   test "should get show" do
-    get categories_show_url
+    category = categories(:one)
+    get categories_show_url(category)
     assert_response :success
   end
 
   test "should get new" do
+    category = categories(:one)
     get categories_new_url
     assert_response :success
   end
 
   test "should get edit" do
-    get categories_edit_url
+    category = categories(:one)
+    get edit_category_url(category)
     assert_response :success
   end
 
   test "should get delete" do
-    get categories_delete_url
+    get delete_category_url
     assert_response :success
   end
 end
