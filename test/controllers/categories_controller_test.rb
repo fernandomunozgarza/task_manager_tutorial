@@ -26,7 +26,8 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get delete" do
-    get delete_category_url
+    category = categories(:one)
+    get delete_category_url(category)
     assert_response :success
   end
 end
