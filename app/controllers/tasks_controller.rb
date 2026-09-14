@@ -8,8 +8,8 @@ class TasksController < ApplicationController
   end
 
   def new
-    #available to use in the view
-    #can also use default values
+    # available to use in the view
+    # can also use default values
     @count = Task.count
     @task = Task.new(position: @count + 1)
   end
@@ -22,7 +22,7 @@ class TasksController < ApplicationController
       # new action is not being called here
       # assign any instance variables needed
       # @count = Task.count, template must have all its needs
-      render('new')
+      render("new")
     end
   end
 
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       redirect_to task_path(@task)
     else
-      render('edit')
+      render("edit")
     end
   end
 
@@ -59,5 +59,4 @@ class TasksController < ApplicationController
       :description
     )
   end
-
 end

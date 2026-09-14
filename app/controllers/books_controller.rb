@@ -8,8 +8,8 @@ class BooksController < ApplicationController
   end
 
   def new
-    #available to use in the view
-    #can also use default values
+    # available to use in the view
+    # can also use default values
     @book = Book.new
   end
 
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
       # new action is not being called here
       # assign any instance variables needed
       # @count = Task.count, template must have all its needs
-      render('new')
+      render("new")
     end
   end
 
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
       redirect_to book_path(@book), notice: "Book was successfully updated."
     else
-      render('edit')
+      render("edit")
     end
   end
 
@@ -55,5 +55,4 @@ class BooksController < ApplicationController
       :title
     )
   end
-
 end

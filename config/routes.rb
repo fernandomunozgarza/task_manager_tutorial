@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-
   # root "main#index"
   root "books#index"
 
   resources :books do
     member do
-      get 'delete'
+      get "delete"
     end
   end
 
@@ -14,24 +13,24 @@ Rails.application.routes.draw do
   # get "categories/new"
   # get "categories/edit"
   # get "categories/delete"
-  
 
-  match 'about', to: "main#about", via: :get
-  match 'hello', to: "main#hello", via: :get
+
+  match "about", to: "main#about", via: :get
+  match "hello", to: "main#hello", via: :get
 
   get "main/index"
 
   # resourceful routing for both
   resources :categories do
     member do
-      get 'delete'
+      get "delete"
     end
   end
 
 
   resources :tasks do
     member do
-      get 'delete'
+      get "delete"
     end
   end
 
