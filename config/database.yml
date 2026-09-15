@@ -58,18 +58,20 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: task_manager_tutorial_production
-    username: task_manager_tutorial
-    password: <%= ENV["TASK_MANAGER_TUTORIAL_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %>
+    host: null
+    username: null
+    password: null
+    database: null
   cache:
     <<: *primary_production
-    database: task_manager_tutorial_production_cache
-    migrations_paths: db/cache_migrate
+    # database: task_manager_tutorial_production_cache
+    # migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: task_manager_tutorial_production_queue
-    migrations_paths: db/queue_migrate
+    # database: task_manager_tutorial_production_queue
+    # migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: task_manager_tutorial_production_cable
-    migrations_paths: db/cable_migrate
+    # database: task_manager_tutorial_production_cable
+    # migrations_paths: db/cable_migrate
