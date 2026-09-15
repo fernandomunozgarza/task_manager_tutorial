@@ -1,6 +1,30 @@
+    <% if @book.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@book.errors.count, "error") %> book not created:</h2>
+    <ul>
+      <% @book.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+    
     <table summary="Book form fields">
       <tr>
         <th>Title</th>
         <td><%= f.text_field(:title) %></td>
       </tr>
+      <tr>
+        <th>Author</th>
+        <td><%= f.text_field(:author) %></td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td><%= f.text_field(:price) %></td>
+      </tr>
+      <tr>
+        <th>Published Date</th>
+        <td><%= f.date_select(:published_date) %></td>
+      </tr>
+      <tr>
     </table>
